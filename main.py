@@ -70,22 +70,8 @@ class Aplicacao:
         self._carrinho.decrementar_item(codigo)
 
     def _remover_items(self):
-        print('Informe os dados: ')
-        descricao = input('Descricao: ')
-        codigo = input('Codigo: ')
-
-        try:
-            valor_unitario = float(input('Valor unitario: '))
-            quantidade = int(input('Quantidade: '))
-            desconto = int(input('Desconto: '))
-        except ValueError:
-            print('Informe um valor numerico!!!!')
-            return
-        
-        produto = Produto(codigo=codigo, descricao=descricao, desconto=desconto,
-                          valor_unitario=valor_unitario, quantidade=quantidade)
-
-        self._carrinho.remover_item(produto)
+        codigo = input('Codigo do produto: ')
+        self._carrinho.remover_item(codigo)
 
     def _exibir_resumo(self):
         self._carrinho.exibir_resumo()
